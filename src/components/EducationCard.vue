@@ -3,7 +3,7 @@
     <header class="education-card__header">
       <div class="education-card__logo-wrapper">
         <img
-          :src="`/img/educations/${data.logo}`"
+          :src="`img/educations/${data.logo}`"
           :alt="data.title"
           class="education-card__logo"
         />

@@ -25,7 +25,7 @@
       <div class="achievements-card__info">
         <div class="achievements-card__logo-wrapper">
           <img
-            :src="`/img/achievements/${achievement.logo}`"
+            :src="`img/achievements/${achievement.logo}`"
             :alt="achievement.title"
             class="achievements-card__logo"
           />

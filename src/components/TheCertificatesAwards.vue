@@ -5,7 +5,7 @@
       <li class="certificates-awards__item">
         <article class="card">
           <div class="card__img-wrapper">
-            <img src="/img/certificates-awards/web-design.png" alt="" class="card__img">
+            <img :src="'img/certificates-awards/web-design.png'" alt="" class="card__img">
           </div>
           <div class="card__text-wrapper">
             <span class="card__pre-title">
@@ -23,7 +23,7 @@
       <li class="certificates-awards__item">
         <article class="card">
           <div class="card__img-wrapper">
-            <img src="/img/certificates-awards/google.svg" alt="" class="card__img">
+            <img :src="'img/certificates-awards/google.svg'" alt="" class="card__img">
           </div>
           <div class="card__text-wrapper">
             <span class="card__pre-title">

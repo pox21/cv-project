@@ -6,7 +6,7 @@
         <article class="card">
           <div class="card__wrapper">
             <div class="card__img-wrapper">
-              <img src="/img/latest-projects/figma.png" alt="" class="card__img">
+              <img :src="'img/latest-projects/figma.png'" alt="" class="card__img">
             </div>
             <div class="card__text-wrapper">
               <h3 class="card__title">Alexa Dev Community Landing Page</h3>
@@ -31,7 +31,7 @@
         <article class="card">
           <div class="card__wrapper">
             <div class="card__img-wrapper">
-              <img src="/img/latest-projects/Image.png" alt="" class="card__img">
+              <img :src="'img/latest-projects/Image.png'" alt="" class="card__img">
             </div>
             <div class="card__text-wrapper">
               <h3 class="card__title">Portfolio Webpage</h3>

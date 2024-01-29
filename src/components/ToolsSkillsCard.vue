@@ -1,7 +1,7 @@
 <template>
   <article class="card">
     <div class="card__img-wrapper">
-      <img :src="`/img/tools-skills/${data.icon}`" :alt="data.title" class="card__img">
+      <img :src="`img/tools-skills/${data.icon}`" :alt="data.title" class="card__img">
     </div>
     <h3 class="card__title">{{ data.title }}</h3>
     <p class="card__descr">{{ data.description }}</p>
