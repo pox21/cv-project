@@ -61,12 +61,21 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
+      bottom: 0;
       z-index: 5;
       transform: translateX(-100%);
       transition: transform .3s ease-in-out;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      /* Скрываем scrollbar для IE, Edge и Firefox */
+      -ms-overflow-style: none;  /* IE и Edge */
+      scrollbar-width: none;  /* Firefox */
     }
 
     &.mobile {
+      
       transform: translateX(0);
     }
 

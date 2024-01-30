@@ -41,6 +41,15 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     }
+  },
+  watch: {
+    isSidebarOpen: {
+      immediate: false,
+      handler(val) {
+        console.log(val)
+        document.body.classList.toggle('no-scroll', !val);
+      }
+    }
   }
 };
 </script>
