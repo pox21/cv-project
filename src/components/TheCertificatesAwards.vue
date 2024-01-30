@@ -71,6 +71,10 @@ export default {
   display: flex;
   gap: 12px;
 
+  @media(max-width: 576px) {
+    padding: 10px;
+  }
+
   &__img-wrapper {
     width: 43px;
     height: 43px;

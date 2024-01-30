@@ -1,6 +1,11 @@
 <template>
   <main class="main">
-    <TheSidebar />
+    <TheSidebar :is-open="isSidebarOpen" />
+    <button class="sidebar-open" @click="toggleSidebar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+      </svg>
+    </button>
     <div class="main__sections">
       <TheEducation />
       <TheAchievements />
@@ -28,12 +33,40 @@ export default {
     TheCertificatesAwards
   },
   data() {
-    return {};
+    return {
+      isSidebarOpen: true,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+
+.sidebar-open {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+  svg {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+  }
+
+  @media(max-width: 1200px) {
+    display: block;
+  }
+}
 .main {
   display: flex;
   gap: 20px;
@@ -42,6 +75,10 @@ export default {
     position: relative;
     padding: 64px 48px 64px 12px;
     overflow: hidden;
+
+    @media(max-width: 1200px) {
+      padding-right: 20px;
+    }
 
     &::before {
       content: '';
@@ -58,6 +95,10 @@ export default {
       position: relative;
       padding-left: 64px;
       padding-bottom: 48px;
+
+      @media(max-width: 1200px) {
+        padding-left: 40px;
+      }
 
       // &::before {
       //   content: '';

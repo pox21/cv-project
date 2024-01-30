@@ -29,6 +29,11 @@ export default {
   letter-spacing: 0.242px;
   color: var(--gray-darker);
 
+  @media(max-width: 576px) {
+    font-size: 21px;
+    margin-bottom: 16px;
+  }
+
   &__icon {
     position: absolute;
     left: 0;

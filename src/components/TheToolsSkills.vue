@@ -40,11 +40,26 @@ export default {
 
     background-color: var(--sidebar-bg-color);
     flex-basis: 19%;
+    @media(max-width: 722px) {
+      flex-basis: 18.4%;
+    }
+
+    @media(max-width: 576px) {
+      flex-basis: 28%;
+    }
   }
 
   &__item:first-child, &__item:nth-child(2), &__item:nth-child(3) {
     min-height: 130px;
     flex-basis: 32.5%;
+
+    @media(max-width: 722px) {
+      flex-basis: 32%;
+    }
+
+    @media(max-width: 576px) {
+      flex-basis: 31%;
+    }
   }
 }
 </style>

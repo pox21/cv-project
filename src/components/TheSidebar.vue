@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" :class="{mobile: !isOpen}">
     <header class="sidebar__header">
       <div class="sidebar__avatar-wrapper">
         <img
@@ -30,6 +30,12 @@ import languagesData from "@/db/languages";
 import hobbiesData from "@/db/hobbies";
 
 export default {
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       contacts: contactsData,
@@ -44,10 +50,25 @@ export default {
 
 <style lang="scss" scoped>
   .sidebar {
+    position: relative;
+    z-index: 1;
     flex-shrink: 0;
     max-width: 355px;
     padding: 48px;
     background-color: var(--sidebar-bg-color);
+
+    @media(max-width: 1200px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transform: translateX(-100%);
+      transition: transform .3s ease-in-out;
+    }
+
+    &.mobile {
+      transform: translateX(0);
+    }
 
     & > *:not(:nth-last-child(-n+2)) {
       border-bottom: 1px solid #e2e6ee;

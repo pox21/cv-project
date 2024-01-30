@@ -65,6 +65,11 @@ export default {
   grid-template-columns: 240px 1fr;
   gap: 8px;
 
+  @media(max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__head {
     display: flex;
     align-items: center;

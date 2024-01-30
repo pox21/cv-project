@@ -90,6 +90,10 @@ export default {
   padding: 24px;
   background-color: inherit;
 
+  @media(max-width: 576px) {
+    padding: 10px;
+  }
+
   &__wrapper {
     display: flex;
     gap: 16px;
@@ -149,7 +153,8 @@ export default {
     font-style: normal;
     font-weight: 600;
     line-height: 20.168px; /* 125% */
-    text-decoration-line: underline;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
   }
 }
 </style>
