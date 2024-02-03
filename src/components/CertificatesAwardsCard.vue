@@ -1,45 +1,41 @@
 <template>
-  <section class="certificates-awards">
-    <section-title> Certificates & Awards </section-title>
-    <ul class="certificates-awards__list list-reset">
-      <li class="certificates-awards__item" v-for="item in certificates" :key="item.id">
-        <certificatesAwardsCard :data="item" />
-      </li>
-    </ul>
-  </section>
+  <article class="card">
+    <div class="card__img-wrapper">
+      <img :src="`img/certificates-awards/${data.icon}`" alt="" class="card__img">
+    </div>
+    <div class="card__text-wrapper">
+      <span class="card__pre-title">
+        {{ data.preTitle }}
+      </span>
+      <h3 class="card__title">
+        {{ data.title }}
+      </h3>
+    </div>
+    <span class="card__year">
+      {{ data.year }}
+    </span>
+  </article>
 </template>
 
 <script>
-import certificatesData from '@/db/certificates';
-import certificatesAwardsCard from '@/components/certificatesAwardsCard.vue';
-import SectionTitle from '@/components/UI/SectionTitle.vue';
-export default {
-  components: { SectionTitle, certificatesAwardsCard },
-  data() {
-    return {
-      certificates: certificatesData
+
+  export default {
+    props: {
+      data: {
+        type: Object,
+        require: true,
+        validator(val) {
+          return Object.keys(val).includes('year') && 
+            Object.keys(val).includes('title') && 
+            Object.keys(val).includes('preTitle') && 
+            Object.keys(val).includes('icon');
+        }
+      }
     }
   }
-};
 </script>
 
 <style lang="scss" scoped>
-
-.certificates-awards {
-
-  &__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  &__item {
-    background-color: var(--sidebar-bg-color);
-  }
-}
-
 .card {
   padding: 15px 24px;
   display: flex;

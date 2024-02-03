@@ -30,7 +30,14 @@ export default {
   props: {
     data: {
       type: Object,
-      require: true
+      require: true,
+      validator(val) {
+        return Object.keys(val).includes('logo') && 
+          Object.keys(val).includes('title') && 
+          Object.keys(val).includes('faculty') && 
+          Object.keys(val).includes('year') && 
+          Object.keys(val).includes('percentage');
+      }
     }
   }
 };

@@ -37,11 +37,18 @@ export default {
   
   &__list {
     display: grid;
-    grid-template-columns: 228px;
+    grid-template-columns: 225px;
     grid-auto-flow: column;
-    grid-auto-columns: 228px;
+    grid-auto-columns: 225px;
     gap: 8px;
     overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+      }
+      /* Скрываем scrollbar для IE, Edge и Firefox */
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
 
     li > * {
       height: 100%;

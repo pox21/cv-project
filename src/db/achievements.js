@@ -6,7 +6,7 @@ export default [
     year: 'Present',
     location: 'Chandigarh',
     logo: 'Alexa_Dev_Community.svg',
-    desc: 'Creatively Designing and Developing web UI for Chandigarh University’s Alexa Developer Community, upcoming big launch of full website. '
+    desc: 'Creatively Designing and Developing web UI for Chandigarh University’s Alexa Developer Community, upcoming big launch of full website.'
   },
   {
     id: 2,

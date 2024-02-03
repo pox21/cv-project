@@ -13,7 +13,12 @@ export default {
   props: {
     data: {
       type: Object,
-      require: true
+      require: true,
+      validator(val) {
+        return Object.keys(val).includes('icon') && 
+          Object.keys(val).includes('title') && 
+          Object.keys(val).includes('description');
+      }
     }
   }
 }

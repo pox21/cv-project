@@ -23,6 +23,11 @@ export default {
     content: {
       type: Object,
       required: true,
+      validator(val) {
+        return Object.keys(val).includes('link') && 
+          Object.keys(val).includes('title') && 
+          Object.keys(val).includes('text');
+      }
     },
   },
   components: { BaseIcon },
